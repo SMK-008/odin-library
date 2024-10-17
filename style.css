@@ -1,0 +1,48 @@
+dialog{
+    height: 300px;
+    width: 300px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#wrapinput{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+h1{
+    text-align: center;
+}
+dialog{
+    border: 2px solid grey;
+    border-radius: 10px;
+}
+#wrapradio{
+    display: flex;
+    gap:100px
+}
+#buttons{
+    display: flex;
+    justify-content: space-between;
+}
+/* #buttonmain{
+
+} */
+button{
+    height: max-content;
+    width:max-content;
+    border: 3px solid;
+    border-radius: 10px;
+
+}
+button:hover{
+    text-decoration: underline;
+    color: purple;
+}
+
+label{
+    font-weight: bold;
+}
