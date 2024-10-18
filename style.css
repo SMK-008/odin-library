@@ -46,3 +46,9 @@ button:hover{
 label{
     font-weight: bold;
 }
+
+#book1,#book0,#book2{
+    border: 2px solid ;
+    height: 200px;
+    width: 300px;
+}
