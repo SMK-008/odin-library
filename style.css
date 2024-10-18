@@ -51,10 +51,12 @@ label{
     flex-wrap: wrap;
     gap: 20px;
 }
-#book1,#book0,#book2{
+.books>div{
     border: 2px solid ;
     height: 400px;
     width: 400px;
+    border: 5px solid grey;
+    border-radius: 10px;
 }
 p{
     font-size: large;

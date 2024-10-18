@@ -20,11 +20,40 @@ const book0=new Book('J.R.R Tolkien',"The Hobbit",300,"Read")
 const book1=new Book('J.R.R Tolkien',"The Hobbit",300,"Read")
 const book2=new Book('J.R.R Tolkien','The Lord of The Flies',200,"Not Read")
 
+const submit=document.querySelector('#submit')
+submit.addEventListener('click',(e)=>{
+    e.preventDefault()  
+    addBookToLibrary()
+    // loadBooks()  
+})
+
+
+
+
 const myLibrary=[book0,book1,book2]
 
 // console.log(myLibrary[0])
 
 function addBookToLibrary(){
+    let authorIn=document.querySelector('#author')
+    let titleIn=document.querySelector('#title')
+    let pagesIn=document.querySelector('#pages')
+    let readIn=document.querySelector('#read')
+    if(authorIn.value==="" ||pagesIn.value===""||titleIn.value===""||readIn.value===""  ){
+        alert("Please make sure all input fields are filled")
+        // return
+    }else{
+        if(readIn.checked){
+            readIn.value="Read"
+        }else{
+            readIn.value="Not read"
+        }
+        let book=new Book(authorIn.value,titleIn.value,pagesIn.value,readIn.value)
+        myLibrary.push(book)
+        // return
+        loadBooks()
+    }
+    
 
 }
 
@@ -53,7 +82,7 @@ function loadBooks(){
         const bookauthor=document.createElement("p")
         const bookpages=document.createElement("p")
         const bookread=document.createElement("p")
-        
+
         const bookEg=document.createElement("div")
         bookEg.setAttribute('id',`book${i}`)
         // bookEg.setAttribute('id',`book${i}`)
@@ -71,5 +100,5 @@ function loadBooks(){
 
     }
 }
-loadBooks()
+// loadBooks()
 // console.log(loadBooks())
