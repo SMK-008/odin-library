@@ -41,18 +41,22 @@ function addBookToLibrary(){
 const books=document.querySelector(".books")
 // const bookEg=document.createElement("div")
 // bookEg.setAttribute('id','book1')
-const booktitle=document.createElement("h1")
-const bookauthor=document.createElement("p")
-const bookpages=document.createElement("p")
-const bookread=document.createElement("p")
+
 // const docFragment=document.createDocumentFragment
 
-
+    
 
 function loadBooks(){
     for (i=0;i<myLibrary.length;i++){
+        
+        const booktitle=document.createElement("h1")
+        const bookauthor=document.createElement("p")
+        const bookpages=document.createElement("p")
+        const bookread=document.createElement("p")
+        
         const bookEg=document.createElement("div")
         bookEg.setAttribute('id',`book${i}`)
+        // bookEg.setAttribute('id',`book${i}`)
         booktitle.textContent=myLibrary[i].title
         bookauthor.textContent=myLibrary[i].author
         bookpages.textContent=myLibrary[i].pages
@@ -62,7 +66,8 @@ function loadBooks(){
         bookEg.appendChild(bookpages)
         bookEg.appendChild(bookread)
 
-        books.append(bookEg)
+        books.appendChild(bookEg)
+        
 
     }
 }
