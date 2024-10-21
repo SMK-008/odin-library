@@ -51,7 +51,7 @@ function addBookToLibrary(){
         let book=new Book(authorIn.value,titleIn.value,pagesIn.value,readIn.value)
         myLibrary.push(book)
         // return
-        loadBooks()
+        // loadBooks()
     }
     
 
@@ -82,23 +82,47 @@ function loadBooks(){
         const bookauthor=document.createElement("p")
         const bookpages=document.createElement("p")
         const bookread=document.createElement("p")
+        const bookRemove=document.createElement("button")
+        const booktoRead=document.createElement("button")
 
         const bookEg=document.createElement("div")
         bookEg.setAttribute('id',`book${i}`)
+        bookRemove.setAttribute('id','close')
+        booktoRead.setAttribute('id','setRead')
         // bookEg.setAttribute('id',`book${i}`)
         booktitle.textContent=myLibrary[i].title
         bookauthor.textContent=myLibrary[i].author
         bookpages.textContent=myLibrary[i].pages
         bookread.textContent=myLibrary[i].readStatus
+        bookRemove.textContent="Close Book"
+        booktoRead.textContent="Mark as Read"
         bookEg.appendChild(booktitle)
         bookEg.appendChild(bookauthor)
         bookEg.appendChild(bookpages)
         bookEg.appendChild(bookread)
+        bookEg.appendChild(bookRemove)
+        bookEg.appendChild(booktoRead)
 
         books.appendChild(bookEg)
+
+        bookRemove.addEventListener('click',()=>{
+            myLibrary.splice(myLibrary[i],1)
+            books.removeChild(bookEg)
+        })
+
+        booktoRead.addEventListener('click',()=>{
+            myLibrary[i].readStatus="Read"
+            bookread.textContent="Read"
+        })
         
 
     }
 }
 // loadBooks()
 // console.log(loadBooks())
+loadBooks()
+
+// function removeBook(){
+//     myLibrary.pop(myLibrary[i])
+//     booktoRead.
+// }
